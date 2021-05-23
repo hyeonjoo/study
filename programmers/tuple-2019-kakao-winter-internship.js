@@ -51,10 +51,20 @@ function solution(s) {
 }
 
 // B)
-// Search: object key search performance ?
-// Try Set, Array.from, Array.reduce
-// See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
-// See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
+/* Searched 1: object vs array lookuup performance
+ * Answer: it depends on data size
+ * Array is faster in small data. However, since object uses hash structure,
+ * object is more efficient at searching huge amount of items.
+ * In general, the indexOf is O(n) and hash is O(1).
+ * Ref: https://stackoverflow.com/questions/32234733/javascript-what-lookup-is-faster-array-indexof-vs-object-hash
+ *
+ * Searched 2: array vs set adding/iterating operations
+ * Answer: Array is a lot more faster in both 10k and 100k elements tests.
+ * Ref: https://stackoverflow.com/questions/39007637/javascript-set-vs-array-performance#comment110600337_39007637
+ *
+ * Read: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
+ * Read: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
+ */
 
 function solution(s) {
   s = s
@@ -68,5 +78,3 @@ function solution(s) {
     }, new Set())
   );
 }
-
-// C) Result of comparing the answers
